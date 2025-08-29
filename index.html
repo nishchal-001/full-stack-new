@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishchal Bikram Thapa Portfolio | University of Sunderland</title>
+    <meta name="description" content="A comprehensive portfolio showcasing full stack development skills including HTML, CSS, Bootstrap, JavaScript, and modern web technologies. Created for University of Suffolk assignment.">
+    <meta name="author" content="Nishchal Bikram Thapa Portfolio">
+    <meta name="keywords" content="full stack development, HTML, CSS, Bootstrap, JavaScript, web development, portfolio, University of Suffolk">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nishchal Bikram Thapa Portfolio">
+    <meta property="og:description" content="Comprehensive showcase of web development skills and modern technologies">
+    <meta property="og:type" content="website">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #06b6d4;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 0.75rem;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .lead {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-custom {
+            padding: 0.75rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary-custom {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .tech-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .tech-badge {
+            text-align: center;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .tech-badge:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .custom-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .layer-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        /* Code Examples */
+        .code-example {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .code-header {
+            background: var(--bg-light);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .code-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .code-tab {
+            padding: 0.5rem 1rem;
+            background: var(--border-color);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .code-tab.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .code-content {
+            padding: 1.5rem;
+        }
+
+        .code-block {
+            background: #1a1a1a;
+            color: #e5e5e5;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-family: 'JetBrains Mono', 'Consolas', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        .code-block .language-label {
+            color: #9ca3af;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .preview-area {
+            background: #f9fafb;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Interactive Elements */
+        .counter-demo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .counter-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .counter-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .counter-btn.danger {
+            background: #dc2626;
+        }
+
+        .counter-btn.danger:hover {
+            background: #b91c1c;
+        }
+
+        .counter-btn.success {
+            background: var(--accent-color);
+        }
+
+        .counter-btn.success:hover {
+            background: #059669;
+        }
+
+        .counter-display {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .task-manager {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .task-input-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .task-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .task-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-remove {
+            background: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        /* Skills section */
+        .skill-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-white);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.1rem;
+            }
+            
+            .tech-badges {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .counter-demo {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .task-input-group {
+                flex-direction: column;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fullstack">Full Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#html">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#css">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bootstrap">Bootstrap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#javascript">JavaScript</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="fade-in">Nishchal Bikram Thapa<br><span style="color: #fbbf24;">Portfolio</span></h1>
+                    <p class="lead fade-in">A comprehensive showcase of web development skills, from frontend fundamentals to modern frameworks</p>
+                    
+                    <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+                        <a href="#fullstack" class="btn-custom btn-primary-custom">Explore Portfolio</a>
+                        <a href="#javascript" class="btn-custom btn-outline-custom">View Projects</a>
+                    </div>
+                    
+                    <div class="tech-badges">
+                        <div class="tech-badge">
+                            <small>01</small>
+                            <div>HTML5</div>
+                        </div>
+                        <div class="tech-badge">
+                            <small>02</small>
+                            <div>CSS3</div>
+                        </div>
+                        <div class="tech-badge">
+                            <small>03</small>
+                            <div>Bootstrap</div>
+                        </div>
+                        <div class="tech-badge">
+                            <small>04</small>
+                            <div>JavaScript</div>
+                        </div>
+                        <div class="tech-badge">
+                            <small>05</small>
+                            <div>Full Stack</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Stack Development Section -->
+    <section id="fullstack" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What is Full Stack Development?</h2>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead text-muted">
+                        Full stack development refers to the practice of working on both the frontend (client-side) 
+                        and backend (server-side) portions of web applications. A full stack developer has the 
+                        skills to handle database operations, server configuration, user interface design, 
+                        and everything in between.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="layer-number">1</div>
+                        <h5 class="text-center mb-3">Frontend Development</h5>
+                        <p class="text-muted text-center mb-3">User interface and experience design</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="layer-number">2</div>
+                        <h5 class="text-center mb-3">Backend Development</h5>
+                        <p class="text-muted text-center mb-3">Server-side logic and database management</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">NoSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="layer-number">3</div>
+                        <h5 class="text-center mb-3">DevOps & Deployment</h5>
+                        <p class="text-muted text-center mb-3">Infrastructure and deployment processes</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-card" style="background: #f8fafc;">
+                <h3 class="text-center mb-4">The Full Stack Development Process</h3>
+                <div class="row g-4">
+                    <div class="col-md-3 text-center">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">01</div>
+                        <h6>Planning</h6>
+                        <p class="text-muted small">Requirements gathering and system design</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">02</div>
+                        <h6>Frontend</h6>
+                        <p class="text-muted small">User interface development and testing</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">03</div>
+                        <h6>Backend</h6>
+                        <p class="text-muted small">Server logic and database implementation</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">04</div>
+                        <h6>Deployment</h6>
+                        <p class="text-muted small">Production deployment and monitoring</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HTML Section -->
+    <section id="html" class="section" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-title">
+                <h2>HTML</h2>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead text-muted">
+                        HTML (HyperText Markup Language) is the foundation of web development. It provides the 
+                        structure and semantic meaning to web content, defining everything from headings and 
+                        paragraphs to forms and multimedia elements.
+                    </p>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <h5>Complete HTML Document Structure</h5>
+                    <p class="text-muted mb-0">A well-structured HTML document with semantic elements, proper meta tags, and accessible markup</p>
+                </div>
+                <div class="code-content">
+                    <div class="code-tabs">
+                        <button class="code-tab active" onclick="showTab('html-code', this)">Code</button>
+                        <button class="code-tab" onclick="showTab('html-preview', this)">Preview</button>
+                    </div>
+                    
+                    <div id="html-code" class="tab-content">
+                        <div class="code-block">
+                            <span class="language-label">HTML</span>
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Portfolio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section id="home"&gt;
+            &lt;h1&gt;Welcome to My Portfolio&lt;/h1&gt;
+            &lt;p&gt;I'm a full stack developer passionate about creating 
+               amazing web experiences.&lt;/p&gt;
+            &lt;img src="profile.jpg" alt="Profile picture" width="200"&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="about"&gt;
+            &lt;h2&gt;About Me&lt;/h2&gt;
+            &lt;article&gt;
+                &lt;p&gt;I have experience in frontend and backend development.&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;HTML5 &amp; CSS3&lt;/li&gt;
+                    &lt;li&gt;JavaScript &amp; TypeScript&lt;/li&gt;
+                    &lt;li&gt;React &amp; Node.js&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2024 My Portfolio. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div id="html-preview" class="tab-content" style="display: none;">
+                        <div class="preview-area">
+                            <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                <nav style="display: flex; gap: 1rem;">
+                                    <a href="#" style="color: #2563eb; text-decoration: none;">Home</a>
+                                    <a href="#" style="color: #2563eb; text-decoration: none;">About</a>
+                                    <a href="#" style="color: #2563eb; text-decoration: none;">Projects</a>
+                                </nav>
+                            </div>
+                            <h2 style="margin-bottom: 0.5rem;">Welcome to My Portfolio</h2>
+                            <p style="color: #6b7280; margin-bottom: 1rem;">I'm a full stack developer passionate about creating amazing web experiences.</p>
+                            <div style="width: 100px; height: 100px; background: #e5e7eb; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 0.875rem;">Profile Image</div>
+                            <h3 style="margin: 1rem 0 0.5rem 0;">About Me</h3>
+                            <p style="color: #6b7280; margin-bottom: 0.5rem;">I have experience in frontend and backend development.</p>
+                            <ul style="color: #6b7280;">
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript & TypeScript</li>
+                                <li>React & Node.js</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>How it works:</strong> This example demonstrates a complete HTML document structure using semantic elements like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, and &lt;footer&gt;. It includes proper meta tags for responsiveness and SEO, accessible navigation with descriptive links, and proper heading hierarchy for screen readers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-card">
+                <h4 class="mb-4">Key HTML Concepts Demonstrated</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Semantic Structure</h6>
+                        <ul class="text-muted">
+                            <li>Proper document outline with heading hierarchy</li>
+                            <li>Semantic HTML5 elements for meaning and accessibility</li>
+                            <li>Logical content organization</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Best Practices</h6>
+                        <ul class="text-muted">
+                            <li>Valid HTML syntax and structure</li>
+                            <li>Accessible images with alt attributes</li>
+                            <li>Meta tags for SEO and responsiveness</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSS Section -->
+    <section id="css" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>CSS</h2>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead text-muted">
+                        CSS (Cascading Style Sheets) controls the visual presentation of web pages. From basic 
+                        styling to advanced layouts and animations, CSS transforms static HTML into beautiful, 
+                        responsive user interfaces.
+                    </p>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <h5>CSS Fundamentals & Responsive Design</h5>
+                    <p class="text-muted mb-0">Core CSS concepts including layout, styling, animations, and mobile responsiveness</p>
+                </div>
+                <div class="code-content">
+                    <div class="code-tabs">
+                        <button class="code-tab active" onclick="showTab('css-code', this)">Code</button>
+                        <button class="code-tab" onclick="showTab('css-preview', this)">Preview</button>
+                    </div>
+                    
+                    <div id="css-code" class="tab-content">
+                        <div class="code-block">
+                            <span class="language-label">CSS</span>
+                            <pre><code>/* CSS Fundamentals - Styling and Layout */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Layout with Flexbox */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* Card Component */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-list {
+        gap: 1rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
+/* CSS Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div id="css-preview" class="tab-content" style="display: none;">
+                        <div class="preview-area">
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <h4>Portfolio Header</h4>
+                                    <nav style="display: flex; gap: 1rem;">
+                                        <a href="#" style="color: white; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#ffd700'" onmouseout="this.style.color='white'">Home</a>
+                                        <a href="#" style="color: white; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#ffd700'" onmouseout="this.style.color='white'">About</a>
+                                        <a href="#" style="color: white; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#ffd700'" onmouseout="this.style.color='white'">Projects</a>
+                                    </nav>
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    <h5 style="margin-bottom: 0.5rem;">Project Card</h5>
+                                    <p style="color: #6b7280; font-size: 0.875rem;">This card demonstrates CSS hover effects and smooth transitions.</p>
+                                </div>
+                                <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    <h5 style="margin-bottom: 0.5rem;">Another Card</h5>
+                                    <p style="color: #6b7280; font-size: 0.875rem;">Responsive grid layout using CSS Grid and Flexbox properties.</p>
+                                </div>
+                            </div>
+                            
+                            <button style="background: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s ease;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                                Styled Button
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>How it works:</strong> This CSS demonstrates fundamental concepts: CSS reset for consistent styling across browsers, Flexbox for navigation layout, hover effects with smooth transitions, responsive grid system using CSS Grid with auto-fit and minmax(), media queries for mobile optimization, and CSS animations using keyframes. The code shows proper use of selectors, the box model, and modern layout techniques.
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-card">
+                <h4 class="mb-4">CSS Concepts Demonstrated</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Layout Systems</h6>
+                        <ul class="text-muted">
+                            <li>CSS Grid for complex layouts</li>
+                            <li>Flexbox for component alignment</li>
+                            <li>Responsive design patterns</li>
+                            <li>Mobile-first approach</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Styling Techniques</h6>
+                        <ul class="text-muted">
+                            <li>Custom properties (CSS variables)</li>
+                            <li>Gradient backgrounds</li>
+                            <li>Box shadows and transitions</li>
+                            <li>Hover and focus states</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Modern Features</h6>
+                        <ul class="text-muted">
+                            <li>CSS animations and keyframes</li>
+                            <li>Pseudo-elements and selectors</li>
+                            <li>Container queries</li>
+                            <li>Accessibility considerations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap Section -->
+    <section id="bootstrap" class="section" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bootstrap Framework</h2>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead text-muted">
+                        Bootstrap is a powerful CSS framework that provides pre-built components and utilities 
+                        for rapid web development. It enables responsive design and consistent UI patterns 
+                        across different devices and browsers.
+                    </p>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <h5>Bootstrap Portfolio Components</h5>
+                    <p class="text-muted mb-0">Responsive portfolio page using Bootstrap's grid system, components, and utilities</p>
+                </div>
+                <div class="code-content">
+                    <div class="code-tabs">
+                        <button class="code-tab active" onclick="showTab('bootstrap-code', this)">Code</button>
+                        <button class="code-tab" onclick="showTab('bootstrap-preview', this)">Preview</button>
+                    </div>
+                    
+                    <div id="bootstrap-code" class="tab-content">
+                        <div class="code-block">
+                            <span class="language-label">HTML + Bootstrap</span>
+                            <pre><code>&lt;!-- Bootstrap Navigation --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top"&gt;
+    &lt;div class="container"&gt;
+        &lt;a class="navbar-brand fw-bold" href="#"&gt;My Portfolio&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+            &lt;ul class="navbar-nav ms-auto"&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#home"&gt;Home&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#about"&gt;About&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#projects"&gt;Projects&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Hero Section --&gt;
+&lt;section class="bg-light py-5"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row align-items-center"&gt;
+            &lt;div class="col-lg-6"&gt;
+                &lt;h1 class="display-4 fw-bold text-primary mb-3"&gt;
+                    Welcome to My Portfolio
+                &lt;/h1&gt;
+                &lt;p class="lead text-muted mb-4"&gt;
+                    I'm a passionate full stack developer creating amazing 
+                    web experiences with modern technologies.
+                &lt;/p&gt;
+                &lt;div class="d-flex gap-3"&gt;
+                    &lt;a href="#projects" class="btn btn-primary btn-lg"&gt;
+                        &lt;i class="bi bi-eye me-2"&gt;&lt;/i&gt;View Projects
+                    &lt;/a&gt;
+                    &lt;a href="#contact" class="btn btn-outline-primary btn-lg"&gt;
+                        &lt;i class="bi bi-envelope me-2"&gt;&lt;/i&gt;Contact Me
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-lg-6 text-center"&gt;
+                &lt;img src="profile.jpg" class="img-fluid rounded-circle shadow-lg" 
+                     alt="Profile Picture"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Skills Cards --&gt;
+&lt;section class="py-5"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row g-4"&gt;
+            &lt;div class="col-md-4"&gt;
+                &lt;div class="card h-100 shadow-sm border-0"&gt;
+                    &lt;div class="card-body text-center"&gt;
+                        &lt;i class="bi bi-code-slash text-primary fs-1 mb-3"&gt;&lt;/i&gt;
+                        &lt;h5 class="card-title"&gt;Frontend&lt;/h5&gt;
+                        &lt;p class="card-text text-muted"&gt;
+                            HTML5, CSS3, JavaScript, React, Bootstrap
+                        &lt;/p&gt;
+                        &lt;div class="progress mb-2"&gt;
+                            &lt;div class="progress-bar bg-primary" style="width: 90%"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;small class="text-muted"&gt;90% Proficiency&lt;/small&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-4"&gt;
+                &lt;div class="card h-100 shadow-sm border-0"&gt;
+                    &lt;div class="card-body text-center"&gt;
+                        &lt;i class="bi bi-server text-success fs-1 mb-3"&gt;&lt;/i&gt;
+                        &lt;h5 class="card-title"&gt;Backend&lt;/h5&gt;
+                        &lt;p class="card-text text-muted"&gt;
+                            Node.js, Express, Python, Databases
+                        &lt;/p&gt;
+                        &lt;div class="progress mb-2"&gt;
+                            &lt;div class="progress-bar bg-success" style="width: 85%"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;small class="text-muted"&gt;85% Proficiency&lt;/small&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-4"&gt;
+                &lt;div class="card h-100 shadow-sm border-0"&gt;
+                    &lt;div class="card-body text-center"&gt;
+                        &lt;i class="bi bi-tools text-warning fs-1 mb-3"&gt;&lt;/i&gt;
+                        &lt;h5 class="card-title"&gt;Tools&lt;/h5&gt;
+                        &lt;p class="card-text text-muted"&gt;
+                            Git, Docker, AWS, VS Code, Figma
+                        &lt;/p&gt;
+                        &lt;div class="progress mb-2"&gt;
+                            &lt;div class="progress-bar bg-warning" style="width: 80%"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;small class="text-muted"&gt;80% Proficiency&lt;/small&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div id="bootstrap-preview" class="tab-content" style="display: none;">
+                        <div class="preview-area">
+                            <!-- Simulated Bootstrap Navigation -->
+                            <div style="background: #0d6efd; color: white; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                                    <span style="font-weight: bold;">My Portfolio</span>
+                                    <div style="display: flex; gap: 1rem; font-size: 0.875rem;">
+                                        <a href="#" style="color: white; text-decoration: none;">Home</a>
+                                        <a href="#" style="color: white; text-decoration: none;">About</a>
+                                        <a href="#" style="color: white; text-decoration: none;">Projects</a>
+                                        <a href="#" style="color: white; text-decoration: none;">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hero Section -->
+                            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                                <div style="display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center;">
+                                    <div>
+                                        <h3 style="color: #0d6efd; margin-bottom: 0.5rem;">Welcome to My Portfolio</h3>
+                                        <p style="color: #6c757d; margin-bottom: 1rem;">I'm a passionate full stack developer creating amazing web experiences.</p>
+                                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                            <button style="background: #0d6efd; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem;">View Projects</button>
+                                            <button style="background: transparent; color: #0d6efd; border: 1px solid #0d6efd; padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem;">Contact Me</button>
+                                        </div>
+                                    </div>
+                                    <div style="width: 80px; height: 80px; background: #dee2e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: #6c757d;">Profile</div>
+                                </div>
+                            </div>
+
+                            <!-- Skills Cards -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                                <div style="background: white; border: 1px solid #dee2e6; border-radius: 0.5rem; padding: 1rem; text-align: center; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);">
+                                    <div style="color: #0d6efd; font-size: 1.5rem; margin-bottom: 0.5rem;">💻</div>
+                                    <h6 style="margin-bottom: 0.5rem;">Frontend</h6>
+                                    <div style="background: #e9ecef; height: 8px; border-radius: 4px; margin-bottom: 0.25rem;">
+                                        <div style="background: #0d6efd; height: 8px; width: 90%; border-radius: 4px;"></div>
+                                    </div>
+                                    <small style="color: #6c757d;">90% Proficiency</small>
+                                </div>
+                                <div style="background: white; border: 1px solid #dee2e6; border-radius: 0.5rem; padding: 1rem; text-align: center; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);">
+                                    <div style="color: #198754; font-size: 1.5rem; margin-bottom: 0.5rem;">🖥️</div>
+                                    <h6 style="margin-bottom: 0.5rem;">Backend</h6>
+                                    <div style="background: #e9ecef; height: 8px; border-radius: 4px; margin-bottom: 0.25rem;">
+                                        <div style="background: #198754; height: 8px; width: 85%; border-radius: 4px;"></div>
+                                    </div>
+                                    <small style="color: #6c757d;">85% Proficiency</small>
+                                </div>
+                                <div style="background: white; border: 1px solid #dee2e6; border-radius: 0.5rem; padding: 1rem; text-align: center; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);">
+                                    <div style="color: #ffc107; font-size: 1.5rem; margin-bottom: 0.5rem;">🔧</div>
+                                    <h6 style="margin-bottom: 0.5rem;">Tools</h6>
+                                    <div style="background: #e9ecef; height: 8px; border-radius: 4px; margin-bottom: 0.25rem;">
+                                        <div style="background: #ffc107; height: 8px; width: 80%; border-radius: 4px;"></div>
+                                    </div>
+                                    <small style="color: #6c757d;">80% Proficiency</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>How it works:</strong> This Bootstrap example demonstrates a complete responsive portfolio page using Bootstrap 5. It includes a sticky navigation with collapse functionality for mobile, a hero section using Bootstrap's grid system and utility classes, skill cards with progress bars, and proper responsive design. The code shows Bootstrap's naming conventions, component structure, and utility classes for spacing, colors, and layout.
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-card">
+                <h4 class="mb-4">Bootstrap Features Demonstrated</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Layout System</h6>
+                        <ul class="text-muted">
+                            <li>Responsive 12-column grid system</li>
+                            <li>Flexbox utilities for alignment</li>
+                            <li>Container and spacing utilities</li>
+                            <li>Breakpoint-specific classes</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Components</h6>
+                        <ul class="text-muted">
+                            <li>Navigation and breadcrumbs</li>
+                            <li>Cards and media objects</li>
+                            <li>Modals and accordions</li>
+                            <li>Forms and input groups</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Utilities & Features</h6>
+                        <ul class="text-muted">
+                            <li>Typography and color utilities</li>
+                            <li>JavaScript interactions</li>
+                            <li>Accessibility best practices</li>
+                            <li>Custom CSS integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Section -->
+    <section id="javascript" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>JavaScript</h2>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead text-muted">
+                        JavaScript is the programming language that brings web pages to life. From basic DOM 
+                        manipulation to complex application logic, JavaScript enables interactive and dynamic 
+                        user experiences on the web.
+                    </p>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-header">
+                    <h5>Interactive JavaScript Examples</h5>
+                    <p class="text-muted mb-0">Working demonstrations of JavaScript functionality with DOM manipulation and event handling</p>
+                </div>
+                <div class="code-content">
+                    <div class="code-tabs">
+                        <button class="code-tab active" onclick="showTab('js-code', this)">Code</button>
+                        <button class="code-tab" onclick="showTab('js-preview', this)">Interactive Demo</button>
+                    </div>
+                    
+                    <div id="js-code" class="tab-content">
+                        <div class="code-block">
+                            <span class="language-label">JavaScript</span>
+                            <pre><code>// JavaScript Fundamentals - Variables, Functions, and DOM Manipulation
+
+// Variables and Data Types
+const userName = "John Doe";
+let userAge = 25;
+const isStudent = true;
+const skills = ["JavaScript", "HTML", "CSS", "React"];
+
+// Functions and Arrow Functions
+function greetUser(name) {
+    return `Hello, ${name}! Welcome to my portfolio.`;
+}
+
+const calculateExperience = (startYear) => {
+    const currentYear = new Date().getFullYear();
+    return currentYear - startYear;
+};
+
+// Array Methods and Higher-Order Functions
+const projects = [
+    { name: "Portfolio Website", tech: "HTML/CSS/JS", year: 2023 },
+    { name: "Task Manager", tech: "React", year: 2024 },
+    { name: "API Integration", tech: "Node.js", year: 2024 }
+];
+
+// Filter projects by year
+const recentProjects = projects.filter(project => project.year >= 2024);
+
+// Map to create project titles
+const projectTitles = projects.map(project => 
+    `${project.name} (${project.tech})`
+);
+
+// DOM Manipulation and Event Handling
+document.addEventListener('DOMContentLoaded', function() {
+    // Counter functionality
+    let count = 0;
+    const counterDisplay = document.getElementById('counter-display');
+    const decrementBtn = document.getElementById('decrement');
+    const incrementBtn = document.getElementById('increment');
+    
+    function updateCounter() {
+        counterDisplay.textContent = count;
+    }
+    
+    decrementBtn.addEventListener('click', function() {
+        count--;
+        updateCounter();
+    });
+    
+    incrementBtn.addEventListener('click', function() {
+        count++;
+        updateCounter();
+    });
+    
+    // Task Manager functionality
+    let tasks = ['Learn JavaScript', 'Build a project'];
+    const taskList = document.getElementById('task-list');
+    const taskInput = document.getElementById('task-input');
+    const addTaskBtn = document.getElementById('add-task');
+    
+    function renderTasks() {
+        taskList.innerHTML = '';
+        tasks.forEach((task, index) => {
+            const li = document.createElement('li');
+            li.className = 'task-item';
+            li.innerHTML = `
+                <span>${task}</span>
+                <button class="task-remove" onclick="removeTask($index)">×</button>
+            `;
+            taskList.appendChild(li);
+        });
+    }
+    
+    function addTask() {
+        const newTask = taskInput.value.trim();
+        if (newTask) {
+            tasks.push(newTask);
+            taskInput.value = '';
+            renderTasks();
+        }
+    }
+    
+    window.removeTask = function(index) {
+        tasks.splice(index, 1);
+        renderTasks();
+    };
+    
+    addTaskBtn.addEventListener('click', addTask);
+    taskInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            addTask();
+        }
+    });
+    
+    // Initialize
+    updateCounter();
+    renderTasks();
+});
+
+// Form Validation Example
+function validateContactForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    let isValid = true;
+    
+    // Validate name
+    if (name.length < 2) {
+        showError('name', 'Name must be at least 2 characters long');
+        isValid = false;
+    }
+    
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showError('email', 'Please enter a valid email address');
+        isValid = false;
+    }
+    
+    // Validate message
+    if (message.length < 10) {
+        showError('message', 'Message must be at least 10 characters long');
+        isValid = false;
+    }
+    
+    return isValid;
+}
+
+function showError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    errorDiv.style.color = 'red';
+    errorDiv.style.fontSize = '0.875rem';
+    field.parentNode.appendChild(errorDiv);
+    field.style.borderColor = 'red';
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div id="js-preview" class="tab-content" style="display: none;">
+                        <div class="preview-area">
+                            <!-- Interactive Counter -->
+                            <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-bottom: 1.5rem;">
+                                <h5 style="margin-bottom: 1rem;">Interactive Counter</h5>
+                                <div class="counter-demo">
+                                    <button id="decrement" class="counter-btn danger">-</button>
+                                    <span id="counter-display" class="counter-display">0</span>
+                                    <button id="increment" class="counter-btn success">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Task Manager -->
+                            <div class="task-manager">
+                                <h5 style="margin-bottom: 1rem;">Task Manager</h5>
+                                <div class="task-input-group">
+                                    <input type="text" id="task-input" class="task-input" placeholder="Add a new task...">
+                                    <button id="add-task" class="counter-btn">Add</button>
+                                </div>
+                                <ul id="task-list" class="task-list"></ul>
+                            </div>
+
+                            <!-- Array Methods Demo -->
+                            <div style="background: white; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem;">
+                                <h5 style="margin-bottom: 1rem;">Array Methods Demo</h5>
+                                <div style="font-size: 0.875rem; color: var(--text-light);">
+                                    <p><strong>Original array:</strong> [1, 2, 3, 4, 5]</p>
+                                    <p><strong>Doubled:</strong> <span id="doubled-array">2, 4, 6, 8, 10</span></p>
+                                    <p><strong>Even numbers:</strong> <span id="even-numbers">2, 4</span></p>
+                                    <p><strong>Sum:</strong> <span id="array-sum">15</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>How it works:</strong> This example covers JavaScript fundamentals: variable declarations with const/let/var, function expressions and arrow functions, array methods like map/filter/find, object manipulation, DOM element selection and event handling, form validation with regex patterns, and interactive user interfaces. It demonstrates how JavaScript interacts with HTML elements to create dynamic user experiences.
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-card">
+                <h4 class="mb-4">JavaScript Concepts Demonstrated</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Core Concepts</h6>
+                        <ul class="text-muted">
+                            <li>Variables and data types</li>
+                            <li>Functions and arrow functions</li>
+                            <li>Objects and arrays</li>
+                            <li>Control flow and loops</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">DOM & Events</h6>
+                        <ul class="text-muted">
+                            <li>Element selection and manipulation</li>
+                            <li>Event listeners and handlers</li>
+                            <li>Form validation and submission</li>
+                            <li>Dynamic content creation</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 style="color: var(--primary-color); margin-bottom: 0.75rem;">Modern Features</h6>
+                        <ul class="text-muted">
+                            <li>ES6+ syntax and features</li>
+                            <li>Array methods (map, filter, reduce)</li>
+                            <li>Template literals and destructuring</li>
+                            <li>Error handling and validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <h4 style="color: var(--text-dark); margin-bottom: 1rem;">Portfolio</h4>
+                <p class="text-muted mb-4" style="max-width: 600px; margin: 0 auto;">
+                    A comprehensive showcase of full stack development skills, demonstrating 
+                    proficiency in HTML, CSS, Bootstrap, JavaScript, and modern web technologies.
+                </p>
+                
+                <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 1.5rem; font-size: 0.875rem; color: var(--text-light); flex-wrap: wrap;">
+                    <span>University of Sunderland</span>
+                    <span>•</span>
+                    <span>Full Stack Development Module</span>
+                    <span>•</span>
+                    <span>Assignment Portfolio</span>
+                </div>
+                
+                <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                    <p style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">
+                        © <span id="current-year">2024</span> Student Portfolio. Created as part of the Full Stack Development module at University of Sunderland.
+                    </p>
+                    <p style="font-size: 0.75rem; color: var(--text-light);">
+                        This portfolio demonstrates understanding of web development fundamentals and modern frameworks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Tab functionality
+        function showTab(tabId, button) {
+            // Hide all tab contents
+            const tabContents = button.parentNode.parentNode.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Remove active class from all tabs
+            const tabs = button.parentNode.querySelectorAll('.code-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab and mark as active
+            document.getElementById(tabId).style.display = 'block';
+            button.classList.add('active');
+        }
+        
+        // JavaScript functionality for interactive demos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Counter functionality
+            let count = 0;
+            const counterDisplay = document.getElementById('counter-display');
+            const decrementBtn = document.getElementById('decrement');
+            const incrementBtn = document.getElementById('increment');
+            
+            function updateCounter() {
+                counterDisplay.textContent = count;
+            }
+            
+            if (decrementBtn && incrementBtn) {
+                decrementBtn.addEventListener('click', function() {
+                    count--;
+                    updateCounter();
+                });
+                
+                incrementBtn.addEventListener('click', function() {
+                    count++;
+                    updateCounter();
+                });
+            }
+            
+            // Task Manager functionality
+            let tasks = ['Learn JavaScript', 'Build a project'];
+            const taskList = document.getElementById('task-list');
+            const taskInput = document.getElementById('task-input');
+            const addTaskBtn = document.getElementById('add-task');
+            
+            function renderTasks() {
+                if (taskList) {
+                    taskList.innerHTML = '';
+                    tasks.forEach((task, index) => {
+                        const li = document.createElement('li');
+                        li.className = 'task-item';
+                        li.innerHTML = `
+                            <span>${task}</span>
+                            <button class="task-remove" onclick="removeTask(${index})">×</button>
+                        `;
+                        taskList.appendChild(li);
+                    });
+                }
+            }
+            
+            function addTask() {
+                if (taskInput) {
+                    const newTask = taskInput.value.trim();
+                    if (newTask) {
+                        tasks.push(newTask);
+                        taskInput.value = '';
+                        renderTasks();
+                    }
+                }
+            }
+            
+            // Make removeTask globally available
+            window.removeTask = function(index) {
+                tasks.splice(index, 1);
+                renderTasks();
+            };
+            
+            if (addTaskBtn) {
+                addTaskBtn.addEventListener('click', addTask);
+            }
+            
+            if (taskInput) {
+                taskInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        addTask();
+                    }
+                });
+            }
+            
+            // Initialize
+            updateCounter();
+            renderTasks();
+            
+            // Array methods demo
+            const originalArray = [1, 2, 3, 4, 5];
+            const doubledArray = originalArray.map(n => n * 2);
+            const evenNumbers = originalArray.filter(n => n % 2 === 0);
+            const arraySum = originalArray.reduce((a, b) => a + b, 0);
+            
+            const doubledElement = document.getElementById('doubled-array');
+            const evenElement = document.getElementById('even-numbers');
+            const sumElement = document.getElementById('array-sum');
+            
+            if (doubledElement) doubledElement.textContent = doubledArray.join(', ');
+            if (evenElement) evenElement.textContent = evenNumbers.join(', ');
+            if (sumElement) sumElement.textContent = arraySum;
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe sections for animation
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
